@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{%block title%}Posts{%endblock title%}
+
+{%block content%}
+<h1>All post</h1>
+
+<hr>
+<h2>Create new blog post</h2>
+<form class="form-group my-2 " action="/post" method="post">
+    <input class="form-control border-info" type="text" name="title" id="title" placeholder="Title">
+    <br>
+    <input class="form-control border-info" type="text" name="author" id="author" placeholder="author">
+    <br>
+    <textarea class="form-control border-info" type="text" name="content" id="content" placeholder="content"></textarea>
+    <br>
+    <input class=" btn btn-md btn-block btn-outline-dark" type="submit" value="Post">
+</form>
+
+<hr>
+
+{%for post in posts%}
+<h2>{{post.title}}</h2>
+<h4>{{post.content}}</h4>
+{%if post.author%}
+<p>Written by: <small class="text-muted">{{post.author}}</small></p>
+{%else%}
+<p>Written by:  <small class="text-muted">N/A</small></p>
+{%endif%}
+<p>Date posted <small class="text-muted">{{post.date_posted}}</small></p>
+<a class="btn btn-danger" href="/post/delete/{{post.id}}">Delete</a>
+<a class="btn btn-warning" href="/post/update/{{post.id}}">Update</a>
+<hr>
+{%endfor%}
+
+{%endblock content%}

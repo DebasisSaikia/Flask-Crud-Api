@@ -1,0 +1,22 @@
+ {% extends 'base.html'%}
+
+{%block title%}Contact page{%endblock title%}
+
+{%block content%}
+<form class="form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Contact Here</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control mb-2" placeholder="Email address" required autofocus>
+    <textarea class="form-control" name="message" id="message" cols="30" rows="5">Message</textarea>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-outline-dark  " type="submit">Send</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+{%endblock content%}
+
+
+
